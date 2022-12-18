@@ -1,0 +1,56 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sdutend marks & percentage</title>
+</head>
+<body>
+	
+	<input type="number" value="" placeholder="TAMIL" id="aa">
+	<input type="number" value="" placeholder="ENGLISH" id="bb">
+	<input type="number" value="" placeholder="MATHS" id="cc">
+	<input type="number" value="" placeholder="SCIENCE" id="dd">
+	<input type="number" value="" placeholder="SOCIAL" id="ee">
+	
+	<button type="button" id="total-btn" onclick="totalFunction()">TOTAL</button>
+	<h1 id="total"></h1>
+	
+	
+	<h1 id="percen"></h1>
+	
+	<h1 id="grade"></h1>
+
+<script>
+
+	function totalFunction(){
+		var a=document.getElementById("aa").value;
+		var b=document.getElementById("bb").value;
+		var c=document.getElementById("cc").value;
+		var d=document.getElementById("dd").value;
+		var e=document.getElementById("ee").value;
+		
+		var total=a-(-b)-(-c)-(-d)-(-e);
+			document.getElementById("total").innerHTML=("Your Total is : "+ total);
+			
+		var per=(total/500)*100;
+			document.getElementById("percen").innerHTML=("Your percentage is : "+ per +"%");
+		
+		
+		if (per <= 100 && per >= 80) {
+			document.getElementById("grade").innerHTML=("Your Grade is A");
+		} 
+		else if (per <= 79 && per >= 60) {
+			document.getElementById("grade").innerHTML=("Your Grade is B");
+		}
+		else if (per <= 59 && per >= 40) {
+			document.getElementById("grade").innerHTML=("Your Grade is C");
+		}
+		else{
+			document.getElementById("grade").innerHTML=("FAIL");
+		}
+	
+	}
+</script>
+
+</body>
+</html>
